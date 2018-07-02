@@ -27,10 +27,6 @@ public class CountyServiceImplTest {
     @InjectMocks
     CountyService countyServiceUnderTest = new CountyServiceImpl();
 
-    /**
-     * Sets up objects and mocks external dependencies needed
-     * for the tests.
-     */
     @Before
     public void setUp() throws Exception {
 
@@ -43,18 +39,12 @@ public class CountyServiceImplTest {
 
     }
 
-    /**
-     * Tests CountyServiceImpl.findDistinctByCountyIdEquals()
-     */
     @Test
     public void findDistinctByCountyIdEquals_CountyFound_Passes() throws Exception {
         Assert.assertEquals("CountyServiceImpl.findDistinctByCountyIdEquals failed",1,
                 countyServiceUnderTest.findDistinctByCountyIdEquals(1).getCountyId());
     }
 
-    /**
-     * Tests CountyServiceImpl.findDistinctByCountyNameEquals()
-     */
     @Test
     public void findDistinctByCountyNameEquals_CountyFound_Passes() throws Exception {
         Assert.assertEquals("CountyServiceImpl.findDistinctByCountyNameEquals failed","Lancashire",
