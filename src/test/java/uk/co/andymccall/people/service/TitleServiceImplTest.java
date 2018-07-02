@@ -9,6 +9,9 @@ import org.mockito.MockitoAnnotations;
 import uk.co.andymccall.people.model.Title;
 import uk.co.andymccall.people.repository.TitleRepository;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.mockito.Mockito.when;
 
 /**

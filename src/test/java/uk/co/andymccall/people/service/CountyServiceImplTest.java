@@ -9,6 +9,9 @@ import org.mockito.MockitoAnnotations;
 import uk.co.andymccall.people.model.County;
 import uk.co.andymccall.people.repository.CountyRepository;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.mockito.Mockito.when;
 
 /**
@@ -33,9 +36,14 @@ public class CountyServiceImplTest {
         MockitoAnnotations.initMocks(this);
 
         County testCounty = new County(1,"Lancashire");
+        County testCounty2 = new County(2,"Yorkshire");
+        List<County> testCountyList = new ArrayList();
+        testCountyList.add(testCounty);
+        testCountyList.add(testCounty2);
 
         when(mockCountyRepository.findDistinctByCountyNameEquals("Lancashire")).thenReturn(testCounty);
         when(mockCountyRepository.findDistinctByCountyIdEquals(1)).thenReturn(testCounty);
+        when(mockCountyRepository.findAll()).thenReturn(testCountyList);
 
     }
 
@@ -49,6 +57,11 @@ public class CountyServiceImplTest {
     public void findDistinctByCountyNameEquals_CountyFound_Passes() throws Exception {
         Assert.assertEquals("CountyServiceImpl.findDistinctByCountyNameEquals failed","Lancashire",
                 countyServiceUnderTest.findDistinctByCountyNameEquals("Lancashire").getCountyName());
+    }
+
+    @Test
+    public void CountyServiceImpl_findAll_Passes() throws Exception {
+        Assert.assertEquals("CountyServiceImpl.findAll has failed!", 2, countyServiceUnderTest.findAll().size());
     }
 
 }
