@@ -9,6 +9,9 @@ import org.mockito.MockitoAnnotations;
 import uk.co.andymccall.people.model.Town;
 import uk.co.andymccall.people.repository.TownRepository;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.mockito.Mockito.when;
 
 /**
@@ -33,9 +36,14 @@ public class TownServiceImplTest {
         MockitoAnnotations.initMocks(this);
 
         Town testTown = new Town(1,"Blackpool");
+        Town testTown2 = new Town (2, "Preston");
+        List<Town> testTownList = new ArrayList();
+        testTownList.add(testTown);
+        testTownList.add(testTown2);
 
         when(mockTownRepository.findDistinctByTownIdEquals(1)).thenReturn(testTown);
         when(mockTownRepository.findDistinctByTownNameEquals("Blackpool")).thenReturn(testTown);
+        when(mockTownRepository.findAll()).thenReturn(testTownList);
     }
 
     @Test
@@ -48,6 +56,11 @@ public class TownServiceImplTest {
     public void findDistinctByTownNameEquals() throws Exception {
         Assert.assertEquals("TownServiceImpl.findDistinctByTownNameEquals() has failed",
                 "Blackpool", townServiceUnderTest.findDistinctByTownNameEquals("Blackpool").getTownName());
+    }
+
+    @Test
+    public void TownServiceImpl_findAll_Passes() throws Exception {
+        Assert.assertEquals("TownServiceImpl.findAll() has failed!",2, townServiceUnderTest.findAll().size() );
     }
 
 }
