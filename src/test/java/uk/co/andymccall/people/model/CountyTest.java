@@ -33,9 +33,9 @@ public class CountyTest {
 
         County countyUnderTest = new County(99,"Lancashire");
 
-        Assert.assertNull("County() failed as countyName is not Lancashire!",countyUnderTest.getCountyName());
+        Assert.assertEquals("County() failed as countyName is not Lancashire!","Lancashire",countyUnderTest.getCountyName());
         Assert.assertEquals("County() failed as titleId is not 99!", 99, countyUnderTest.getCountyId());
-        Assert.assertEquals("County() failed as toString is not correct!", "County{countyId=0, countyName='null'}", countyUnderTest.toString());
+        Assert.assertEquals("County() failed as toString is not correct!", "County{countyId=99, countyName='Lancashire'}", countyUnderTest.toString());
     }
 
     @Test
@@ -54,7 +54,7 @@ public class CountyTest {
         County countyUnderTest = new County();
         countyUnderTest.setCountyId(99);
 
-        Assert.assertEquals("County.setgetCountyId() failed as countyId is not 99!","Lancashire", countyUnderTest.getCountyName());
+        Assert.assertEquals("County.setgetCountyId() failed as countyId is not 99!",99, countyUnderTest.getCountyId());
 
     }
 
