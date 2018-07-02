@@ -93,7 +93,7 @@ public class EmailAddressTest {
         emailAddressUnderTest.setVerificationDate(localDate);
 
         Assert.assertEquals("EmailAddress() failed as verificationDate contains incorrect data!", localDate, emailAddressUnderTest.getVerificationDate());
-        
+
     }
 
     @Test
