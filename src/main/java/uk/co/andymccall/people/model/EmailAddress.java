@@ -30,17 +30,21 @@ public class EmailAddress {
 
     public EmailAddress() {
         generateVerificationKey();
+        setVerified(false);
     }
 
     public EmailAddress(String emailAddress, ContactType contactType) {
         this.emailAddress = emailAddress;
         this.contactType = contactType;
         generateVerificationKey();
+        setVerified(false);
     }
 
     public Long getEmailAddressId() {
         return emailAddressId;
     }
+
+    public void setEmailAddressId(Long emailAddressId) { this.emailAddressId = emailAddressId; }
 
     public String getEmailAddress() {
         return emailAddress;
@@ -73,7 +77,7 @@ public class EmailAddress {
         return verificationKey;
     }
 
-    private void setVerificationKey(UUID verificationKey) {
+    public void setVerificationKey(UUID verificationKey) {
         this.verificationKey = verificationKey;
     }
 
