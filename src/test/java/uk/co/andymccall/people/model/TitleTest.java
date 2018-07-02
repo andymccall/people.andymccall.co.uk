@@ -48,7 +48,7 @@ public class TitleTest {
         Title titleUnderTest = new Title();
         titleUnderTest.setTitle("Mr.");
 
-        Assert.assertEquals("Title() failed as title is not Mr.!","Mr.", titleUnderTest.getTitle());
+        Assert.assertEquals("Title.setgetTitle failed as title is not Mr.!","Mr.", titleUnderTest.getTitle());
 
     }
 
@@ -58,7 +58,7 @@ public class TitleTest {
         Title titleUnderTest = new Title();
         titleUnderTest.setTitleId(99);
 
-        Assert.assertEquals("Title() failed as titleId is not 99!", 99, titleUnderTest.getTitleId());
+        Assert.assertEquals("Title.setgetTitleId failed as titleId is not 99!", 99, titleUnderTest.getTitleId());
 
     }
 
