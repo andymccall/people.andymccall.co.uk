@@ -135,6 +135,49 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                </plugin>
+                <plugin>
+                    <groupId>org.jacoco</groupId>
+                    <artifactId>jacoco-maven-plugin</artifactId>
+                    <version>0.7.8</version>
+                    <executions>
+                        <execution>
+                            <id>prepare-integration-tests</id>
+                            <phase>pre-integration-test</phase>
+                            <goals>
+                                <goal>prepare-agent</goal>
+                            </goals>
+                            <configuration>
+                                <destFile>${basedir}/target/jacoco.exec</destFile>
+                            </configuration>
+                        </execution>
+                        <execution>
+                            <id>jacoco-site</id>
+                            <phase>post-integration-test</phase>
+                            <goals>
+                                <goal>report</goal>
+                            </goals>
+                            <configuration>
+                                <dataFile>${basedir}/target/jacoco.exec</dataFile>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.eluder.coveralls</groupId>
+                    <artifactId>coveralls-maven-plugin</artifactId>
+                    <version>4.3.0</version>
+                    <configuration>
+                        <repoToken>${env.COVERALLS_REPO_TOKEN}</repoToken>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                </plugin>
         </plugins>
     </build>
 
