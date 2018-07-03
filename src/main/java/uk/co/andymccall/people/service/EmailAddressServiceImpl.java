@@ -23,7 +23,7 @@ public class EmailAddressServiceImpl implements EmailAddressService {
     @Autowired
     EmailAddressRepository emailAddressRepository;
 
-    public EmailAddress findDistinctByEmailIdEquals(Long emailAddressId) {
+    public EmailAddress findDistinctByEmailAddressIdEquals(Long emailAddressId) {
         return emailAddressRepository.findDistinctByEmailAddressIdEquals(emailAddressId);
     }
 

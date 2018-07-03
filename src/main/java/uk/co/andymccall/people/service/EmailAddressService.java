@@ -15,7 +15,7 @@ import java.util.List;
 
 public interface EmailAddressService {
 
-    public EmailAddress findDistinctByEmailIdEquals(Long emailId);
+    public EmailAddress findDistinctByEmailAddressIdEquals(Long emailId);
     public EmailAddress findDistinctByEmailAddressEquals(String emailAddress);
     public List<EmailAddress> findAll();
 
