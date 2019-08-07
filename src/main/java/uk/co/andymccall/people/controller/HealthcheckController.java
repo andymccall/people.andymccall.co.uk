@@ -14,6 +14,7 @@ import java.time.LocalDateTime;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 @RestController
+@RequestMapping("/api/")
 public class HealthcheckController {
 
     private static final Logger logger =
