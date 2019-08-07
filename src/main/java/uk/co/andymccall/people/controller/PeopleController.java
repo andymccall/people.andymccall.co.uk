@@ -56,7 +56,7 @@ public class PeopleController {
         this.addressService = addressService;
     }
 
-    @RequestMapping(value = {"/", "/development-create"}, method = RequestMethod.GET, produces = "application/json;charset=UTF-8")
+    @RequestMapping(value = {"/development-create"}, method = RequestMethod.GET, produces = "application/json;charset=UTF-8")
     public @ResponseBody
     String developmentCreate() {
 
