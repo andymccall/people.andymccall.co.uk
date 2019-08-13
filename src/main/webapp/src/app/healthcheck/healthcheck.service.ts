@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import {Healthcheck} from "./healthcheck";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {catchError, retry, map} from "rxjs/operators";
 import {Observable, throwError} from "rxjs";
 
 @Injectable({
